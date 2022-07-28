@@ -1,13 +1,5 @@
--Passport no genera la cookie. Sin cookie el user no sirve para nada.
-
 -Almacenar el Guest-Key para usar en rutas
 
 -Hacer rutas para Favear, listar y rankear
 
 -Utilidad botones Fav, List y rankear
-
--Buscar users
-
--Pasar todo a React Context
-
--Reformular

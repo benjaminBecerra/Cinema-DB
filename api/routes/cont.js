@@ -42,4 +42,11 @@ contRoute.get(`/search/crew/:media/:id`, (req, res, next) => {
     .catch(next)
 })
 
+//Busca elenco y equipo
+contRoute.post(`/vote/:media/:id/:vote`, (req, res, next) => {
+  axios.post(`${url}/3/${req.params.media}/${req.params.id}/rating?api_key=${key}`, {value: req.params.vote})
+    .then(data => res.status(200).send(data.data))
+    .catch(next)
+})
+
 module.exports = contRoute

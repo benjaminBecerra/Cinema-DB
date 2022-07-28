@@ -1,6 +1,7 @@
 const s = require('sequelize');
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const Favorites = require('./favourites')
 
 class User extends s.Model { hash(password,salt){return bcrypt.hash(password, salt)} }
 
@@ -35,5 +36,9 @@ User.beforeCreate((user) => {
       user.password = hash;
     });
 });
+
+
+User.hasMany(Favorites)
+Favorites.belongsTo(User)
 
   module.exports = User
